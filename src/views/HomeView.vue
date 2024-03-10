@@ -4,7 +4,7 @@
       <p class="today-text">Today.</p>
     </div>
     <div class="right-section">
-      <p class="sleep-text">잠은 푹자자 -희성-</p>
+      <p class="sleep-text">{{ randomGreeting('희성') }}</p>
     </div>
     <div class="center-section">
       <p class="items-text">플라스틱 종이 병 캔</p>
@@ -17,6 +17,21 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    randomGreeting() {
+      const greetings = [
+        `이젠 맨날 교복입고오세요 -학생부-`,
+        `나무 한그루는 종이 100장-환경부-`,
+        `외교가 짱이다-외교부-`
+      ];
+      return greetings[Math.floor(Math.random() * greetings.length)];
+    }
+  }
+};
+</script>
 
 <style scoped>
 .home-view {
